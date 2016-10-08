@@ -1,3 +1,46 @@
+// all possible words to guess
+// keep this as a global variable and pass it in
+// so you could reuse the code to play with different dictionaries
+// could define this in a different js file, too
+var gameOfThronesDictionary = [
+	"Jaime",
+	"Cersei",
+	"Tyrion",
+	"Blackfish",
+	"Sansa",
+	"Arya",
+	"Summer",
+	"Winter",
+	"Others",
+	"Dothraki",
+	"Valyrian",
+	"Targaryen",
+	"Direwolf",
+	"Lannister",
+	"Riverrun",
+	"Winterfell",
+	"Dreadfort",
+	"Mereen",
+	"Sunspear",
+	"Clegane",
+	"Dragonfire",
+	"Stoneheart",
+	"Hodor",
+	"Coldhands",
+	"Mormont",
+	"Longclaw"
+];
+
+//global functions
+// set up event listener, and initialize game
+function gameInit(dict){
+	document.addEventListener('keydown', function(event) {
+		var userInput = String.fromCharCode(event.keyCode).toLowerCase();
+    	hangmanGame.guessLetter(userInput.toLowerCase());
+	});
+	hangmanGame.newGame(dict);
+}
+
 // the game Object
 var hangmanGame = {
 	// this gets definted by the game init function
@@ -22,17 +65,9 @@ var hangmanGame = {
 	waitingForAGuess : true,
 
 	// METHODS
-	gameInit : function(dict){
+
+	newGame : function(dict){
 		this.dictionary = dict;
-		document.addEventListener('keydown', function(event) {
-				var userInput = String.fromCharCode(event.keyCode).toLowerCase();
-		    	hangmanGame.guessLetter(userInput.toLowerCase());
-		});
-
-		this.newGame();
-	},
-
-	newGame : function(){
 		var rand = Math.floor(Math.random() * this.dictionary.length);
 		this.currentAnswer = this.dictionary[rand].toLowerCase();
 		console.log("answer: " + this.currentAnswer);
@@ -132,11 +167,7 @@ var hangmanGame = {
 		// also display the wrong letters the user has already guessed
 		var html2 = "You guessed: <br>";
 		for (var j = 0; j < this.guessedWrongLetters.length; j++) {
-			if(j > 0){
-				// don't need a comma before the first one
-				html2 += ", ";
-			}
-			html2 += this.guessedWrongLetters[j];	
+			html2 += this.guessedWrongLetters[j] + " ";	
 		}
 		document.querySelector('#guessedWrongLetters').innerHTML = html2;
 	},
@@ -147,36 +178,4 @@ var hangmanGame = {
 	}
 };
 
-// all possible words to guess
-// keep this outside of the object, so you can play with different dictionaries
-// could define this in a different js file, too
-var gameOfThronesDictionary = [
-	"Jaime",
-	"Cersei",
-	"Tyrion",
-	"Blackfish",
-	"Sansa",
-	"Arya",
-	"Summer",
-	"Winter",
-	"Others",
-	"Dothraki",
-	"Valyrian",
-	"Targaryen",
-	"Direwolf",
-	"Lannister",
-	"Riverrun",
-	"Winterfell",
-	"Dreadfort",
-	"Mereen",
-	"Sunspear",
-	"Clegane",
-	"Dragonfire",
-	"Stoneheart",
-	"Hodor",
-	"Coldhands",
-	"Mormont",
-	"Longclaw"
-];
-
-hangmanGame.gameInit(gameOfThronesDictionary);
+gameInit(gameOfThronesDictionary);
