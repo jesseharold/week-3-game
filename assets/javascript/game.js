@@ -54,7 +54,7 @@ var hangmanGame = {
 	bodyParts : ["head", "torso", "right arm", "left arm", "right leg", "left leg"],
 
 	// keep track of how much of the hangman is hung
-	hangman : [false],
+	hangman : [],
 
 	// keep track of incorrect letters guessed
 	guessedWrongLetters : [],
@@ -75,7 +75,7 @@ var hangmanGame = {
 
 	newGame : function(dict){
 		// reset game arrays
-		this.hangman = [false];
+		this.hangman = [];
 		this.guessedWrongLetters = [];
 		this.guessedRightLetters = [];
 		this.dictionary = dict;
@@ -87,7 +87,7 @@ var hangmanGame = {
 		this.displayScore();
 
 		document.querySelector('.gameOverMessage').style.display = 'none';
-		document.querySelector('.turnsleft').innerHTML = this.currentAnswer.length;
+		document.querySelector('.turnsleft').innerHTML = this.bodyParts.length;
 
 		this.waitingForAGuess = true;
 	},
@@ -108,18 +108,10 @@ var hangmanGame = {
 		console.log("turnFail");
 		this.guessedWrongLetters.push(letter);
 		var isGameOver = false;
-		for (var i = 0; i < this.hangman.length; i++) {
-			if(this.hangman[i] === false){
-				// find the first false item in the array, make it true
-				this.hangman[i] = true;
-				// then exit the loop
-				i = this.hangman.length;
-			}
-			if (i === (this.hangman.length-2)){
-				// this is the last loop, which means
-				// all body parts are now completed, game is over
-					isGameOver = true; 
-			}
+		this.hangman.push(true);
+		if (this.hangman.length === this.bodyParts.length){
+			// all body parts are now completed, game is over
+				isGameOver = true; 
 		}
 		this.displayHangman();
 		if (isGameOver === true){
@@ -137,7 +129,6 @@ var hangmanGame = {
 	        this.guessedRightLetters[index] = letter;
 	        startIndex = index + 1;
 	    }
-	    //console.log(guessedRightLetters);
 
 		this.displayBlanks();
 
@@ -174,13 +165,12 @@ var hangmanGame = {
 	displayHangman : function(){
 	//	console.log("displayHangman");
 		var html = "noose";
-		var guessesRemaining = this.hangman.length;
 		for (var i = 0; i < this.hangman.length; i++) {
 			if(this.hangman[i] === true){
 				html += "<br>Display " + this.bodyParts[i];
-				guessesRemaining--;
 			}
 		}
+		var guessesRemaining = this.bodyParts.length - this.hangman.length;
 		document.querySelector('.hangman').innerHTML = html;
 		document.querySelector('.turnsleft').innerHTML = guessesRemaining;
 
