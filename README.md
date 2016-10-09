@@ -9,6 +9,8 @@ DONE:
     If the word is madonna, display it like this when the game starts: _ _ _ _ _ _ _.
     As the user guesses the correct letters, reveal them: m a d o _  _ a.
     Display Letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).
+    Display wins: (# of times user guessed the word correctly).
+    Display number of Guesses Remaining: (# of guesses remaining for the user).
 
     Organize your game code as an object, except for the key events to get the letter guessed. 
         Save your whole game and it's properties in an object.
@@ -22,10 +24,8 @@ TODO:
     Watch the demo:
     https://uclax.bootcampcontent.com/UCLA-Coding-Boot-Camp/09-16-Class-Content/blob/master/0919-MW/03-intro-js-hangman-dom/2-Homework/Instructions/hangman-game-demo.mov
 
-    Display the following on the page:
-        Wins: (# of times user guessed the word correctly).
 
-        Number of Guesses Remaining: (# of guesses remaining for the user).
+        
 
     After the user wins/loses, the game should automatically choose another word and make the user play it.
 

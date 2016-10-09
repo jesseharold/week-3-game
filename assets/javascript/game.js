@@ -34,10 +34,14 @@ var gameOfThronesDictionary = [
 //global functions
 // set up event listener, and initialize game
 function gameInit(dict){
-	document.addEventListener('keydown', function(event) {
+	document.addEventListener("keydown", function(event) {
 		var userInput = String.fromCharCode(event.keyCode).toLowerCase();
     	hangmanGame.guessLetter(userInput.toLowerCase());
 	});
+	document.querySelector(".newGame").addEventListener("click", function(event){
+		hangmanGame.newGame(dict);
+	});
+
 	hangmanGame.newGame(dict);
 }
 
@@ -50,7 +54,7 @@ var hangmanGame = {
 	bodyParts : ["head", "torso", "right arm", "left arm", "right leg", "left leg"],
 
 	// keep track of how much of the hangman is hung
-	hangman : [false, false, false, false, false, false],
+	hangman : [false],
 
 	// keep track of incorrect letters guessed
 	guessedWrongLetters : [],
@@ -64,27 +68,28 @@ var hangmanGame = {
 	// stop the game from registering key presses at some times
 	waitingForAGuess : true,
 
+	wins : 0,
+	losses : 0,
+
 	// METHODS
 
 	newGame : function(dict){
+		// reset game arrays
+		this.hangman = [false];
+		this.guessedWrongLetters = [];
+		this.guessedRightLetters = [];
 		this.dictionary = dict;
 		var rand = Math.floor(Math.random() * this.dictionary.length);
 		this.currentAnswer = this.dictionary[rand].toLowerCase();
 		console.log("answer: " + this.currentAnswer);
 		this.displayBlanks();
-		this.waitingForAGuess = true;
-	},
+		this.displayHangman();
+		this.displayScore();
 
-	displayBlanks : function(){
-		var html = "";
-		for(var i = 0; i < this.currentAnswer.length; i++){
-			if (this.guessedRightLetters[i]){
-				html += " " + this.guessedRightLetters[i] + " ";
-			} else {
-				html += " _ ";
-			}
-		}
-		document.querySelector('#letterBlanks').innerHTML = html;
+		document.querySelector('.gameOverMessage').style.display = 'none';
+		document.querySelector('.turnsleft').innerHTML = this.currentAnswer.length;
+
+		this.waitingForAGuess = true;
 	},
 
 	guessLetter : function(input){
@@ -154,26 +159,54 @@ var hangmanGame = {
 		}
 	},
 
+	displayBlanks : function(){
+		var html = "";
+		for(var i = 0; i < this.currentAnswer.length; i++){
+			if (this.guessedRightLetters[i]){
+				html += " " + this.guessedRightLetters[i] + " ";
+			} else {
+				html += " _ ";
+			}
+		}
+		document.querySelector('.letterBlanks').innerHTML = html;
+	},
+
 	displayHangman : function(){
 	//	console.log("displayHangman");
 		var html = "noose";
+		var guessesRemaining = this.hangman.length;
 		for (var i = 0; i < this.hangman.length; i++) {
 			if(this.hangman[i] === true){
 				html += "<br>Display " + this.bodyParts[i];
+				guessesRemaining--;
 			}
 		}
-		document.querySelector('#hangman').innerHTML = html;
+		document.querySelector('.hangman').innerHTML = html;
+		document.querySelector('.turnsleft').innerHTML = guessesRemaining;
 
 		// also display the wrong letters the user has already guessed
 		var html2 = "You guessed: <br>";
 		for (var j = 0; j < this.guessedWrongLetters.length; j++) {
 			html2 += this.guessedWrongLetters[j] + " ";	
 		}
-		document.querySelector('#guessedWrongLetters').innerHTML = html2;
+		document.querySelector('.guessedWrongLetters').innerHTML = html2;
+	},
+
+	displayScore : function(){
+		var html = "Wins: " + this.wins + "<br>Losses: " + this.losses;
+		document.querySelector('.score').innerHTML = html;
 	},
 
 	gameOver : function(result){
 		console.log("gameOver: "+result);
+		if (result == "win"){
+			this.wins++;
+		} else {
+			this.losses++;
+		}
+		this.displayScore();
+		document.querySelector('.resultText').innerHTML = "You " + result + "!"
+		document.querySelector('.gameOverMessage').style.display = 'block';
 		this.waitingForAGuess = false;
 	}
 };

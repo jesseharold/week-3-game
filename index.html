@@ -10,21 +10,39 @@
 <p class="instructions">
 	Press any key to start guessing letters.
 </p>
-	<div id="hangman">
-		noose
-	</div>
+	<section>
+		<h3 class="sectionTitle">Turns Left: <span class="turnsleft">6</span></h3>
+		<div class="hangman">
+			noose
+		</div>
+	</section>
 
-	<div id="letterBlanks">
-	</div>
+	<section>
+		<h3 class="sectionTitle">Guess the Word</h3>
+		<div class="letterBlanks">
+		</div>
+	</section>
 
-	<div id="guessedWrongLetters">
-	</div>
+	<section>
+		<h3 class="sectionTitle">Wrong Letters</h3>
+		<div class="guessedWrongLetters">
+		</div>
+	</section>
 
-	<div class="score">
-	<h3>Your Score</h3>
-	Wins:<span class="score__num" id="wins"></span><br>
-	Losses:
-	</div>
+	<section>
+		<h3 class="sectionTitle">Your Score</h3>
+		<div class="score">
+		Wins: 0<br>
+		Losses: 0
+		</div>
+	</section>
+
+	<section class="gameOverMessage">
+		<div class="resultText">You Win!</div>
+		<button class="newGame">New Game</button>
+	</section>
+
+
 
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
