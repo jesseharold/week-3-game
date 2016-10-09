@@ -105,7 +105,7 @@ var hangmanGame = {
 	},
 
 	turnFail : function(letter) {
-		console.log("turnFail");
+		//console.log("turnFail");
 		this.guessedWrongLetters.push(letter);
 		var isGameOver = false;
 		this.hangman.push(true);
@@ -120,7 +120,7 @@ var hangmanGame = {
 	},
 
 	turnSuccess : function(position, letter) {
-		console.log("turnSuccess");
+		//console.log("turnSuccess");
 		// find all positions of this letter in the answer
 		// I found this solution on Stack Overflow and modified it
 	    var startIndex = 0;
@@ -163,7 +163,7 @@ var hangmanGame = {
 	},
 
 	displayHangman : function(){
-	//	console.log("displayHangman");
+		//	console.log("displayHangman");
 		var html = "noose";
 		for (var i = 0; i < this.hangman.length; i++) {
 			if(this.hangman[i] === true){
@@ -188,7 +188,7 @@ var hangmanGame = {
 	},
 
 	gameOver : function(result){
-		console.log("gameOver: "+result);
+		//console.log("gameOver: "+result);
 		if (result == "win"){
 			this.wins++;
 		} else {

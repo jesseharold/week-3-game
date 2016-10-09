@@ -19,15 +19,10 @@ DONE:
         Remember: global variables, then objects, then calls.
         Definitely talk with a TA or your instructor if you get tripped up during this challenge.
 
-TODO:
-
-    Watch the demo:
-    https://uclax.bootcampcontent.com/UCLA-Coding-Boot-Camp/09-16-Class-Content/blob/master/0919-MW/03-intro-js-hangman-dom/2-Homework/Instructions/hangman-game-demo.mov
-
-
-        
-
     After the user wins/loses, the game should automatically choose another word and make the user play it.
+    (I put this on a button instead, don't want to be too pushy.)
+
+TODO:
 
 Bonuses:
 
