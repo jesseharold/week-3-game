@@ -33,11 +33,9 @@ DONE:
     
      - replace bodyparts text with images
 
+     - add fun google fonts
+
 TODO:
-
-    fonts
-
-Bonuses:
 
     background music
 
