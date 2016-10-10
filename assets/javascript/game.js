@@ -1,36 +1,3 @@
-// all possible words to guess
-// keep this as a global variable and pass it in
-// so you could reuse the code to play with different dictionaries
-// could define this in a different js file, too
-var gameOfThronesDictionary = [
-	"Jaime",
-	"Cersei",
-	"Tyrion",
-	"Blackfish",
-	"Sansa",
-	"Arya",
-	"Summer",
-	"Winter",
-	"Others",
-	"Dothraki",
-	"Valyrian",
-	"Targaryen",
-	"Direwolf",
-	"Lannister",
-	"Riverrun",
-	"Winterfell",
-	"Dreadfort",
-	"Mereen",
-	"Sunspear",
-	"Clegane",
-	"Dragonfire",
-	"Stoneheart",
-	"Hodor",
-	"Coldhands",
-	"Mormont",
-	"Longclaw"
-];
-
 //global functions
 // set up event listener, and initialize game
 function gameInit(dict){
@@ -106,7 +73,8 @@ var hangmanGame = {
 		this.dictionary = dict;
 		// choose a word
 		var rand = Math.floor(Math.random() * this.dictionary.length);
-		this.currentAnswer = this.dictionary[rand].toLowerCase();
+		this.currentAnswer = this.dictionary[rand].word.toLowerCase();
+		document.querySelector('.wordCategory').innerHTML = "Category: " + this.dictionary[rand].category;
 		console.log("answer: " + this.currentAnswer);
 		//reset display
 		this.displayBlanks();
@@ -236,5 +204,3 @@ var hangmanGame = {
 		this.waitingForAGuess = false;
 	}
 };
-
-gameInit(gameOfThronesDictionary);

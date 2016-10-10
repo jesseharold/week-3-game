@@ -22,7 +22,12 @@ DONE:
     After the user wins/loses, the game should automatically choose another word and make the user play it.
     (I put this on a button instead, don't want to be too pushy.)
 
+    - separated the game logic and dictionary data for better reusablilty
+
+    - added category to each word
+
 TODO:
+    replace bodyparts text with images
 
 Bonuses:
 

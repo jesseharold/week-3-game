@@ -24,6 +24,8 @@
 		<h3 class="sectionTitle">Guess the Word</h3>
 		<div class="letterBlanks">
 		</div>
+		<div class="wordCategory">
+		</div>
 	</section>
 
 	<section>
@@ -47,6 +49,13 @@
 
 
 
+	<script type="text/javascript" src="assets/javascript/gameOfThronesDictionary.js"></script>
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
+	<script type="text/javascript">
+		// separating the dictionary data from the game logic and 
+		// putting the init call in the HTML file so you could re-use the script 
+		// with different skins and different dictionaries
+		gameInit(gameOfThronesDictionary);
+	</script>
 </body>
 </html>
