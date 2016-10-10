@@ -124,3 +124,7 @@ footer {
 .resultText {
 	line-height: 40px;
 }
+.audioEmbed {
+	clear: both;
+	display: block;
+}

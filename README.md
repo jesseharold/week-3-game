@@ -37,8 +37,11 @@ DONE:
 
      - restyled gameoverbox, paused game
 
-TODO:
+    - show an image of the clue if the user guesses their word correctly 
 
-    background music
+    - background music
 
-    show an image of the clue if the user guesses their word correctly 
+
+possible features to add:
+     - get image dynamically using google search rather than hardcoding links
+     - hints? categorize clues as easy or hard? 
