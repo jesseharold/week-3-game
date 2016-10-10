@@ -2,8 +2,10 @@
 // set up event listener, and initialize game
 function gameInit(dict){
 	document.addEventListener("keydown", function(event) {
-		var userInput = String.fromCharCode(event.keyCode).toLowerCase();
-    	hangmanGame.guessLetter(userInput.toLowerCase());
+		if (hangmanGame.gameActive){
+			var userInput = String.fromCharCode(event.keyCode).toLowerCase();
+    		hangmanGame.guessLetter(userInput.toLowerCase());
+    	}
 	});
 	document.querySelector(".newGame").addEventListener("click", function(event){
 		hangmanGame.newGame(dict);
@@ -45,6 +47,7 @@ var hangmanGame = {
 	guessesLeft : 0,
 	wins : 0,
 	losses : 0,
+	gameActive : 0,
 
 	// METHODS
 
@@ -57,6 +60,7 @@ var hangmanGame = {
 		this.guessedRightLetters = [];
 		this.guessesLeft = this.bodyParts.length;
 		this.dictionary = dict;
+		this.gameActive = true;
 		// choose a word
 		this.currentAnswerIndex = Math.floor(Math.random() * this.dictionary.length);
 		this.currentAnswer = this.dictionary[this.currentAnswerIndex].word.toLowerCase();
@@ -174,6 +178,8 @@ var hangmanGame = {
 
 	gameOver : function(result){
 		//console.log("gameOver: "+result);
+		// stop accepting keystroke events
+		this.gameActive = false;
 		if (result == "survived"){
 			this.wins++;
 		} else {
@@ -182,6 +188,7 @@ var hangmanGame = {
 		this.displayScore();
 		document.querySelector('.resultText').innerHTML = "You " + result + "!"
 		document.querySelector('.gameOverMessage').style.display = 'block';
+		document.querySelector('.gameOverImage').src = "assets/images/sorry.gif";
 		//remove this word from the dictionary, so you don't get it again
 		this.dictionary.splice(this.currentAnswerIndex, 1);
 	}

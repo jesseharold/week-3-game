@@ -5,381 +5,457 @@
 var gameOfThronesDictionary = [
 	{
 		word: "Jaime",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Cersei",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Tyrion",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Blackfish",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Sansa",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Arya",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Craster",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Podrick",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Grenn",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Brienne",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Renly",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Stannis",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Theon",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Ramsay",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Hotpie",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Gendry",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Thoros",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Belwas",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Barristan",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Hizdar",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Summer",
-		category: "Character"
+		category: "Character",
+		image: ""
 	},
 	
 	{
 		word: "Shaggydog",
-		category: "Character"
+		category: "Character",
+		image: ""
 	},
 	
 	{
 		word: "Ghost",
-		category: "Character"
+		category: "Character",
+		image: ""
 	},
 	
 	{
 		word: "Nymeria",
-		category: "Character"
+		category: "Character",
+		image: ""
 	},
 	
 	{
 		word: "Lady",
-		category: "Character"
+		category: "Character",
+		image: ""
 	},
 	
 	{
 		word: "Drogon",
-		category: "Character"
+		category: "Character",
+		image: ""
 	},
 	
 	{
 		word: "Viserion",
-		category: "Character"
+		category: "Character",
+		image: ""
 	},
 	
 	{
 		word: "Rhaegal",
-		category: "Character"
+		category: "Character",
+		image: ""
 	},
 	
 	{
 		word: "Wunwun",
-		category: "Character"
+		category: "Character",
+		image: ""
 	},
 	
 	{
 		word: "Ice",
-		category: "Thing"
+		category: "Thing",
+		image: ""
 	},
 	
 	{
 		word: "Others",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Dothraki",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Valyria",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Targaryen",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Stark",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Manderly",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Karstark",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Tyrell",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Martell",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Arryn",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Frey",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Bolton",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Reyne",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Direwolf",
-		category: "Thing"
+		category: "Thing",
+		image: ""
 	},
 	
 	{
 		word: "Lannister",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Riverrun",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Winterfell",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Dreadfort",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Mereen",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Sunspear",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Highgarden",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Dorne",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Astapor",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Braavos",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Naath",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Asshai",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Frostfangs",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Hardhome",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Skagos",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Lys",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Tyrosh",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Qarth",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Starfall",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Pyke",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Clegane",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Tarth",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Wildfire",
-		category: "Thing"
+		category: "Thing",
+		image: ""
 	},
 	
 	{
 		word: "Stoneheart",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Hodor",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Coldhands",
-		category: "Person"
+		category: "Person",
+		image: ""
 	},
 	
 	{
 		word: "Mormont",
-		category: "Nation or House"
+		category: "Nation or House",
+		image: ""
 	},
 	
 	{
 		word: "Heartsbane",
-		category: "Thing"
+		category: "Thing",
+		image: ""
 	},
 	
 	{
 		word: "Oathkeeper",
-		category: "Thing"
+		category: "Thing",
+		image: ""
 	},
 	
 	{
 		word: "Dawn",
-		category: "Thing"
+		category: "Thing",
+		image: ""
 	},
 	
 	{
 		word: "Dragonstone",
-		category: "Place"
+		category: "Place",
+		image: ""
 	},
 	
 	{
 		word: "Longclaw",
-		category: "Thing"
+		category: "Thing",
+		image: ""
 	}
 ];

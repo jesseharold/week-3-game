@@ -15,11 +15,14 @@ section {
 	min-width: 160px;
 }
 h3 {
-	font-size: 26px;
-	border-bottom: 1px solid #000;
-	margin-bottom: 10px;
-	color: #886;
-	font-family: 'Quintessential', cursive;
+	font-size: 28px;
+    border-bottom: 1px solid #886;
+    margin-bottom: 10px;
+    color: #886;
+    font-family: 'Quintessential', cursive;
+    position: relative;
+    left: -10px;
+    top: -3px;
 }
 h1 {
 	font-size: 80px;
@@ -71,12 +74,31 @@ footer {
 .gameOverMessage {
 	display: none;
 	position: absolute;
-    top: 40%;
-    left: 40%;
-    width: 250px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.gameOverBG {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: .5;
+}
+.gameOverContainer {
+	display: block;
+	position: relative;
     text-align: center;
     vertical-align: middle;
     font-size: 40px;
+    line-height: 60px;
+    margin: 5% 30%;
+}
+.gameOverImage {
+	display: block;
 }
 
 }

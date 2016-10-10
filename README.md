@@ -35,8 +35,10 @@ DONE:
 
      - add fun google fonts
 
+     - restyled gameoverbox, paused game
+
 TODO:
 
     background music
 
-    show an image of the clue if the user guesses their word correctly
+    show an image of the clue if the user guesses their word correctly 
