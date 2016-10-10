@@ -104,6 +104,7 @@ footer {
 }
 .gameOverImage {
 	display: block;
+	width: 500px;
 }
 .quote {
     background-color: #222;

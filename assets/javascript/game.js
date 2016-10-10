@@ -180,15 +180,17 @@ var hangmanGame = {
 		//console.log("gameOver: "+result);
 		// stop accepting keystroke events
 		this.gameActive = false;
+		var gameOverImage = "assets/images/sorry.gif"
 		if (result == "survived"){
 			this.wins++;
+			gameOverImage = this.dictionary[this.currentAnswerIndex].image;
 		} else {
 			this.losses++;
 		}
 		this.displayScore();
 		document.querySelector('.resultText').innerHTML = "You " + result + "!"
 		document.querySelector('.gameOverMessage').style.display = 'block';
-		document.querySelector('.gameOverImage').src = "assets/images/sorry.gif";
+		document.querySelector('.gameOverImage').src = gameOverImage;
 		//remove this word from the dictionary, so you don't get it again
 		this.dictionary.splice(this.currentAnswerIndex, 1);
 	}
