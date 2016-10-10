@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Harold's Hangman Game</title>
+	<title>Flayed Man - a Game of Thrones Hangman Game</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-<h1>Flayed Man</h1>
-<p class="instructions">
-	"A naked man has few secrets, a flayed man has none."<br>
-	&mdash; House Bolton</p>
-<p class="instructions">
-	Press any key to start guessing letters.
-</p>
-	<section>
-		<h3 class="sectionTitle">Turns Left: <span class="turnsleft">6</span></h3>
-		<div class="flayedMan">
-			noose
-		</div>
+	<section class="intro">
+		<h1>Flayed Man</h1>
+		<p class="quote">
+			"A naked man has few secrets, a flayed man has none."<br>
+			&mdash; House Bolton</p>
+		<p class="instructions">
+			Press any key to start guessing letters. Flayed Man is a Game of Thrones Hangman Game.
+		</p>
 	</section>
 
-	<section>
+	<section class="gameBoard">
 		<h3 class="sectionTitle">Guess the Word</h3>
 		<div class="letterBlanks">
 		</div>
 		<div class="wordCategory">
 		</div>
+		<div class="flayedMan">
+		</div>
 	</section>
 
 	<section>
 		<h3 class="sectionTitle">Wrong Letters</h3>
+		You Guessed:
 		<div class="guessedWrongLetters">
 		</div>
+		<em>Turns Left: <span class="turnsleft">6</span></em>
 	</section>
 
 	<section>
@@ -47,6 +47,9 @@
 		<button class="newGame">New Game</button>
 	</section>
 
+	<footer>
+	Game created by Jesse Harold, 2016
+	</footer>
 
 
 	<script type="text/javascript" src="assets/javascript/gameOfThronesDictionary.js"></script>

@@ -53,6 +53,7 @@ var hangmanGame = {
 
 	// word the user is currently trying to guess
 	currentAnswer : "",
+	currentAnswerIndex : 0,
 
 	// stop the game from registering key presses at some times
 	waitingForAGuess : true,
@@ -72,9 +73,9 @@ var hangmanGame = {
 		this.guessesLeft = this.bodyParts.length;
 		this.dictionary = dict;
 		// choose a word
-		var rand = Math.floor(Math.random() * this.dictionary.length);
-		this.currentAnswer = this.dictionary[rand].word.toLowerCase();
-		document.querySelector('.wordCategory').innerHTML = "Category: " + this.dictionary[rand].category;
+		this.currentAnswerIndex = Math.floor(Math.random() * this.dictionary.length);
+		this.currentAnswer = this.dictionary[this.currentAnswerIndex].word.toLowerCase();
+		document.querySelector('.wordCategory').innerHTML = "Category: " + this.dictionary[this.currentAnswerIndex].category;
 		console.log("answer: " + this.currentAnswer);
 		//reset display
 		this.displayBlanks();
@@ -169,17 +170,17 @@ var hangmanGame = {
 
 	displayHangman : function(){
 		//	console.log("displayHangman");
-		var html = "noose";
-		for (var i = 0; i < this.bodyParts.length; i++) {
-			if(this.bodyParts[i].flayed === true){
-				html += "<br>Display " + this.bodyParts[i].display;
+		var html = "<img alt='The Flayed Man' src='assets/images/flayed-man";
+			if (this.guessesLeft < 6){
+				html += "-"
+				html += (6-this.guessesLeft);
 			}
-		}
+		html += ".png' \>"
 		document.querySelector('.flayedMan').innerHTML = html;
 		document.querySelector('.turnsleft').innerHTML = this.guessesLeft;
 
 		// also display the wrong letters the user has already guessed
-		var html2 = "You guessed: <br>";
+		var html2 = "<br>";
 		for (var j = 0; j < this.guessedWrongLetters.length; j++) {
 			html2 += this.guessedWrongLetters[j] + " ";	
 		}
@@ -201,6 +202,8 @@ var hangmanGame = {
 		this.displayScore();
 		document.querySelector('.resultText').innerHTML = "You " + result + "!"
 		document.querySelector('.gameOverMessage').style.display = 'block';
+		//remove this word from the dictionary, so you don't get it again
+		this.dictionary.splice(this.currentAnswerIndex, 1);
 		this.waitingForAGuess = false;
 	}
 };

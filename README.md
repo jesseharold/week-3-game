@@ -26,12 +26,19 @@ DONE:
 
     - added category to each word
 
-TODO:
-    replace bodyparts text with images
-
-Bonuses:
-
-    Play a sound or song when the user guesses their word correctly, like in our demo.
+    - remove word from array once it's been played
 
     Write some stylish CSS rules to make a design that fits your game's theme.
     Choose a theme for your game! In the demo, we picked an 80s theme: 80s questions, 80s sound and an 80s aesthetic. You can choose any subject for your theme, though, so be creative!
+
+TODO:
+
+    replace bodyparts text with images
+
+    fonts
+
+Bonuses:
+
+    background music
+
+    show an image of the clue if the user guesses their word correctly

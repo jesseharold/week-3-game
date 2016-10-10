@@ -1,11 +1,60 @@
+body {
+	padding: 30px;
+	background-image: url(../images/background.jpg);
+}
+section {
+	border: 1px #333 solid;
+	padding: 20px;
+	margin: 20px;
+	float: left;
+	background-color: black;
+	color: white;
+	min-width: 200px;
+}
+h3 {
+	font-weight: bold;
+	font-size: 24px;
+	border-bottom: 1px solid #000;
+	margin-bottom: 10px;
+}
+h1 {
+	font-weight: bold;
+	font-size: 36px;
+	margin-bottom: 20px;
+	color: red;
+}
+p {
+	margin: 10px;    
+	margin: 10px;
+    font-size: 20px;
+    color: #b5a8a6;
+    line-height: 24px
+}
+footer {
+	clear: both;
+    text-align: center;
+    margin-top: 30px;
+    background-color: black;
+    padding: 40px;
+    color: #fff;
+    opacity: .5;
+}
+.intro {
+    max-width: 325px;
+}
 .guessedWrongLetters {
-
+	margin-bottom: 20px;
+	color: red;
+}
+.gameBoard {
+	float: right;
+    width: 395px;
 }
 .letterBlanks {
 
 }
-.hangman {
-
+.flayedMan {
+	margin-top: 20px;
 }
 .score {
 
@@ -15,16 +64,29 @@
 }
 .gameOverMessage {
 	display: none;
+	position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 250px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 40px;
 }
-section {
-	border: 1px #333 solid;
-	padding: 20px;
-	margin: 40px;
-	float: left;
+
 }
-h3 {
-	font-weight: bold;
-	font-size: 24px;
-	border-bottom: 1px solid #000;
-	margin-bottom: 10px;
+.sectiontitle {
+
+}
+.quote {
+
+}
+.instrucions {
+
+}
+.wordCategory {
+    margin-top: 20px;
+    font-style: italic;
+}
+.resultText {
+
 }
