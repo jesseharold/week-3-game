@@ -3,7 +3,10 @@ A game of Hangman, written in JavaScript and CSS
 
 http://still-gorge-96730.herokuapp.com/
 
-DONE:
+Note: the solution is displayed in the console so you can test it without being a Game of Thrones geek. :)
+
+
+FEATURES DONE:
     
     Use key events to listen for the letters that your players will type.
 
@@ -45,5 +48,6 @@ DONE:
 
 
 possible features to add:
-     - get image dynamically using google search rather than hardcoding links
+     - get image dynamically using google search rather than hardcoding links?
      - hints? categorize clues as easy or hard? 
+     - music doesn't autoplay in all browsers, investigate
