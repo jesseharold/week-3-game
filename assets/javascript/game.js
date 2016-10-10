@@ -181,14 +181,16 @@ var hangmanGame = {
 		// stop accepting keystroke events
 		this.gameActive = false;
 		var gameOverImage = "assets/images/sorry.gif"
+		var message = "You " + result + "!";
 		if (result == "survived"){
 			this.wins++;
 			gameOverImage = this.dictionary[this.currentAnswerIndex].image;
+			message = this.dictionary[this.currentAnswerIndex].word + " is correct!";
 		} else {
 			this.losses++;
 		}
 		this.displayScore();
-		document.querySelector('.resultText').innerHTML = "You " + result + "!"
+		document.querySelector('.resultText').innerHTML = message;
 		document.querySelector('.gameOverMessage').style.display = 'block';
 		document.querySelector('.gameOverImage').src = gameOverImage;
 		//remove this word from the dictionary, so you don't get it again
