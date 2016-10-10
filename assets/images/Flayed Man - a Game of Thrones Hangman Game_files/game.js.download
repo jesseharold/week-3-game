@@ -99,7 +99,7 @@ var hangmanGame = {
 				isGameOver = true; 
 		}
 		if (isGameOver === true){
-			this.gameOver("got flayed");
+			this.gameOver("lose");
 		}
 		this.displayHangman();
 	},
@@ -132,7 +132,7 @@ var hangmanGame = {
 		    }
 		}
 	    if (gameIsWon){
-		    this.gameOver("survived");
+		    this.gameOver("win");
 		}
 	},
 
@@ -174,7 +174,7 @@ var hangmanGame = {
 
 	gameOver : function(result){
 		//console.log("gameOver: "+result);
-		if (result == "survived"){
+		if (result == "win"){
 			this.wins++;
 		} else {
 			this.losses++;

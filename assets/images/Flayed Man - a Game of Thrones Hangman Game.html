@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)file:///C:/Users/jesse/Documents/HarryCode/UCLA%20boot%20camp/week-3-game/week-3-game/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Flayed Man - a Game of Thrones Hangman Game</title>
+	<link rel="stylesheet" type="text/css" href="./Flayed Man - a Game of Thrones Hangman Game_files/reset.css">
+	<link rel="stylesheet" type="text/css" href="./Flayed Man - a Game of Thrones Hangman Game_files/style.css">
+</head>
+<body>
+	<section class="intro">
+		<h1>Flayed Man</h1>
+		<p class="quote">
+			"A naked man has few secrets, a flayed man has none."<br>
+			— House Bolton</p>
+		<p class="instructions">
+			Press any key to start guessing letters. Flayed Man is a Game of Thrones Hangman Game.
+		</p>
+	</section>
+
+	<section class="gameBoard">
+		<h3 class="sectionTitle">Guess the Word</h3>
+		<div class="letterBlanks"> s  _  _  _  _  _  _  _  _ </div>
+		<div class="wordCategory">Category: Character</div>
+		<div class="flayedMan"><img alt="The Flayed Man" src="./Flayed Man - a Game of Thrones Hangman Game_files/flayed-man-1.png"></div>
+	</section>
+
+	<section>
+		<h3 class="sectionTitle">Wrong Letters</h3>
+		You Guessed:
+		<div class="guessedWrongLetters"><br> </div>
+		<em>Turns Left: <span class="turnsleft">5</span></em>
+	</section>
+
+	<section>
+		<h3 class="sectionTitle">Your Score</h3>
+		<div class="score">Wins: 2<br>Losses: 1</div>
+	</section>
+
+	<section class="gameOverMessage" style="display: none;">
+		<div class="resultText">You lose!</div>
+		<button class="newGame">New Game</button>
+	</section>
+
+	<footer>
+	Game created by Jesse Harold, 2016
+	</footer>
+
+
+	<script type="text/javascript" src="./Flayed Man - a Game of Thrones Hangman Game_files/gameOfThronesDictionary.js.download"></script>
+	<script type="text/javascript" src="./Flayed Man - a Game of Thrones Hangman Game_files/game.js.download"></script>
+	<script type="text/javascript">
+		// separating the dictionary data from the game logic and 
+		// putting the init call in the HTML file so you could re-use the script 
+		// with different skins and different dictionaries
+		gameInit(gameOfThronesDictionary);
+	</script>
+
+</body></html>

@@ -30,10 +30,10 @@ DONE:
 
     Write some stylish CSS rules to make a design that fits your game's theme.
     Choose a theme for your game! In the demo, we picked an 80s theme: 80s questions, 80s sound and an 80s aesthetic. You can choose any subject for your theme, though, so be creative!
+    
+     - replace bodyparts text with images
 
 TODO:
-
-    replace bodyparts text with images
 
     fonts
 
