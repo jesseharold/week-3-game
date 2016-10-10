@@ -1,13 +1,13 @@
 body {
 	padding: 30px;
 	background-image: url(../images/background.jpg);
-	font-family: sans-serif;
+	font-family: 'Bitter', 'Times New Roman', serif;
     font-size: 18px;
     line-height: 30px;
 }
 section {
 	border: 1px #886 solid;
-	padding: 20px;
+	padding: 12px 20px;
 	margin: 20px;
 	float: left;
 	background-color: black;
@@ -15,19 +15,18 @@ section {
 	min-width: 160px;
 }
 h3 {
-	font-weight: bold;
-	font-size: 24px;
+	font-size: 26px;
 	border-bottom: 1px solid #000;
 	margin-bottom: 10px;
 	color: #886;
-	font-family: serif;
+	font-family: 'Quintessential', cursive;
 }
 h1 {
-	font-weight: bold;
-	font-size: 36px;
-	margin-bottom: 20px;
+	font-size: 80px;
+	margin: 8px 0 0 0;
 	color: red;
-	font-family: serif;
+    text-shadow: #000 -4px 3px 4px;
+	font-family: 'Quintessential', cursive;
 }
 p {
 	margin: 10px;    
@@ -57,7 +56,8 @@ footer {
     width: 395px;
 }
 .letterBlanks {
-
+    font-size: larger;
+    letter-spacing: 3px;
 }
 .flayedMan {
 	margin-top: 20px;
@@ -84,10 +84,14 @@ footer {
 
 }
 .quote {
-
+    background-color: #222;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-align: right;
+    color: #666;
 }
 .instrucions {
-
+	color: white;
 }
 .wordCategory {
     margin-top: 5px;
@@ -95,5 +99,5 @@ footer {
     color: #666;
 }
 .resultText {
-
+	line-height: 40px;
 }
