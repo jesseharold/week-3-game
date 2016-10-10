@@ -50,11 +50,33 @@ var hangmanGame = {
 	// this gets definted by the game init function
 	dictionary : [],
 
-	// what to display when a part gets hung, replace these w images later?
-	bodyParts : ["head", "torso", "right arm", "left arm", "right leg", "left leg"],
-
-	// keep track of how much of the hangman is hung
-	hangman : [],
+	// an array of objects to keep track of how much of the hangman is flayed
+	bodyParts : [
+		{
+			display : "head",
+			flayed : false
+		},
+		{
+			display : "torso",
+			flayed : false
+		},
+		{
+			display : "right arm",
+			flayed : false
+		},
+		{
+			display : "left arm",
+			flayed : false
+		},
+		{
+			display : "right leg",
+			flayed : false
+		},
+		{
+			display : "left leg",
+			flayed : false
+		}
+	],
 
 	// keep track of incorrect letters guessed
 	guessedWrongLetters : [],
@@ -67,7 +89,7 @@ var hangmanGame = {
 
 	// stop the game from registering key presses at some times
 	waitingForAGuess : true,
-
+	guessesLeft : 0,
 	wins : 0,
 	losses : 0,
 
@@ -75,13 +97,18 @@ var hangmanGame = {
 
 	newGame : function(dict){
 		// reset game arrays
-		this.hangman = [];
+		for (var i = 0; i < this.bodyParts.length; i++) {
+			this.bodyParts[i].flayed = false;
+		}
 		this.guessedWrongLetters = [];
 		this.guessedRightLetters = [];
+		this.guessesLeft = this.bodyParts.length;
 		this.dictionary = dict;
+		// choose a word
 		var rand = Math.floor(Math.random() * this.dictionary.length);
 		this.currentAnswer = this.dictionary[rand].toLowerCase();
 		console.log("answer: " + this.currentAnswer);
+		//reset display
 		this.displayBlanks();
 		this.displayHangman();
 		this.displayScore();
@@ -106,17 +133,26 @@ var hangmanGame = {
 
 	turnFail : function(letter) {
 		//console.log("turnFail");
-		this.guessedWrongLetters.push(letter);
+		this.guessesLeft--;
 		var isGameOver = false;
-		this.hangman.push(true);
-		if (this.hangman.length === this.bodyParts.length){
+		for (var i = 0; i < this.bodyParts.length; i++) {
+			if (this.bodyParts[i].flayed === false){
+				// find the first unflayed bodypart and set it to true
+				this.bodyParts[i].flayed = true;
+				// exit the loop
+				i = this.bodyParts.length;
+			}
+		}
+		this.guessedWrongLetters.push(letter);
+
+		if (this.guessesLeft == 0){
 			// all body parts are now completed, game is over
 				isGameOver = true; 
 		}
-		this.displayHangman();
 		if (isGameOver === true){
 			this.gameOver("lose");
 		}
+		this.displayHangman();
 	},
 
 	turnSuccess : function(position, letter) {
@@ -135,6 +171,7 @@ var hangmanGame = {
 	    //test to see if the game is won
 	    var gameIsWon = true;
 	    if (this.guessedRightLetters.length < this.currentAnswer.length) {
+	    	// this is a faster check, but sometimes will be false
 			gameIsWon = false;
 		} else {
 		    for (var i = 0; i < this.guessedRightLetters.length; i++) {
@@ -165,14 +202,13 @@ var hangmanGame = {
 	displayHangman : function(){
 		//	console.log("displayHangman");
 		var html = "noose";
-		for (var i = 0; i < this.hangman.length; i++) {
-			if(this.hangman[i] === true){
-				html += "<br>Display " + this.bodyParts[i];
+		for (var i = 0; i < this.bodyParts.length; i++) {
+			if(this.bodyParts[i].flayed === true){
+				html += "<br>Display " + this.bodyParts[i].display;
 			}
 		}
-		var guessesRemaining = this.bodyParts.length - this.hangman.length;
-		document.querySelector('.hangman').innerHTML = html;
-		document.querySelector('.turnsleft').innerHTML = guessesRemaining;
+		document.querySelector('.flayedMan').innerHTML = html;
+		document.querySelector('.turnsleft').innerHTML = this.guessesLeft;
 
 		// also display the wrong letters the user has already guessed
 		var html2 = "You guessed: <br>";
