@@ -173,7 +173,7 @@ var gameOfThronesDictionary = [
 	
 	{
 		word: "Rhaegar",
-		category: "Character",
+		category: "Person",
 		image: "http://www.nerdcoremovement.com/wp-content/uploads/2015/05/Rhaegar-Targaryen-Game-of-Thrones-938x535.png"
 	},
 	
