@@ -48,6 +48,7 @@ FEATURES DONE:
 
 
 possible features to add:
+     - change success image to loading img before showing again
      - get image dynamically using google search rather than hardcoding links?
      - hints? categorize clues as easy or hard? 
      - music doesn't autoplay in all browsers, investigate
