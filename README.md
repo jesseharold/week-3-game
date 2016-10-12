@@ -46,9 +46,12 @@ FEATURES DONE:
 
     - background music
 
+    - changed success image to loading img before showing a new one (some of them are really big)
+
+    - changed BG music to audio tag instead of embed
+
 
 possible features to add:
-     - change success image to loading img before showing again
+     - sound effect for game lost, game won
      - get image dynamically using google search rather than hardcoding links?
      - hints? categorize clues as easy or hard? 
-     - music doesn't autoplay in all browsers, investigate

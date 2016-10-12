@@ -58,9 +58,11 @@ var hangmanGame = {
 		}
 		this.guessedWrongLetters = [];
 		this.guessedRightLetters = [];
+		//reset game variables
 		this.guessesLeft = this.bodyParts.length;
 		this.dictionary = dict;
 		this.gameActive = true;
+		document.querySelector('.gameOverImage').src = "assets/images/loading.gif";
 		// choose a word
 		this.currentAnswerIndex = Math.floor(Math.random() * this.dictionary.length);
 		this.currentAnswer = this.dictionary[this.currentAnswerIndex].word.toLowerCase();
