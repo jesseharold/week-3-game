@@ -48,6 +48,8 @@ var hangmanGame = {
 	wins : 0,
 	losses : 0,
 	gameActive : 0,
+	// valid characters to guess
+	alphabet : "abcdefghijklmnopqrstuvwxyz",
 
 	// METHODS
 
@@ -78,11 +80,25 @@ var hangmanGame = {
 	},
 
 	guessLetter : function(input){
-		var position = this.currentAnswer.indexOf(input);
-		if (position < 0){
-			this.turnFail(input);
-		} else {
-			this.turnSuccess(position, input);
+		// make sure the input is a letter
+		var isALetter = this.alphabet.indexOf(input);
+		if (isALetter >= 0){
+			// check if it's in the answer
+			var position = this.currentAnswer.indexOf(input);
+			if (position < 0){
+				// check if this wrong letter has already been guessed
+				var alreadyWrongGuessed = false;
+				for (var i = 0; i < this.guessedWrongLetters.length; i++) {
+					if (this.guessedWrongLetters[i] === input) {
+						alreadyWrongGuessed = true;
+					}
+				}
+				if (!alreadyWrongGuessed) {
+					this.turnFail(input);
+				}
+			} else {
+				this.turnSuccess(position, input);
+			}
 		}
 	},
 
